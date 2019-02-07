@@ -1,10 +1,10 @@
 <!DOCTYPE html>
 <html>
 <head>
-    <title>Users List</title>
+    <title>Feedbacks List</title>
 </head>
 <body>
-<h1>Users List</h1>
+<h1>Feedbacks List</h1>
 
 
 </body>

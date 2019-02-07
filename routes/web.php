@@ -1,6 +1,6 @@
 <?php
 
-use App\User, App\Http\Controllers\UsersController;
+
 /*
 |--------------------------------------------------------------------------
 | Web Routes
@@ -12,30 +12,18 @@ use App\User, App\Http\Controllers\UsersController;
 |
 */
 
-
-Route::get('/testuser', function ()
-{
-    $user = new User;
-
-    $user->name = "Testuser";
-    $user->surname = "Testusersur";
-    $user->email = "abc@abc.com";
-    $user->man = true;
-    $user->birthday = '2001-01-01';
-    $user->password =  Hash::make("password");
-    $user->save();
-
-    return "Test user saved in DB";
-
-
-});
-
-Route::get('/test', 'UserController@test');
-
-Route::get('/list', 'UserController@list');
+use Illuminate\Auth\Middleware\Authenticate;
 
 Auth::routes();
 
 Route::get('/', 'HomeController@index')->name('home');
 
 Route::get('/home', 'HomeController@index')->name('home');
+
+Route::get('/list', 'FeedbackController@list')->middleware('auth')->name('list');
+
+Route::get('/feedback', 'FeedbackController@writeNew');
+
+Route::post('/feedback', 'FeedbackController@publish')->name('feedback');
+
+Route::get('/sent', 'FeedbackController@sent')->name('sent');

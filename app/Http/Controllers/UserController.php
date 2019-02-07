@@ -2,17 +2,11 @@
 
 namespace App\Http\Controllers;
 
-use Illuminate\Http\Request;
+
+use App\User;
+use Illuminate\Support\Facades\Hash;
 
 class UserController extends Controller
 {
-    public function test()
-    {
-        return "Users controller works";
-    }
 
-    public function list()
-    {
-        return view('users.list');
-    }
 }

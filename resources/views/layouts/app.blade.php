@@ -66,7 +66,17 @@
                                     </form>
                                 </div>
                             </li>
+                           @if(Request::path() != 'list')
+                                <li class="nav-item">
+                                    <a class="nav-link" href="{{ route('list') }}">{{ __('Messages list') }}</a>
+                                </li>
+                            @endif
                         @endguest
+                        @if(Request::path() != 'feedback')
+                        <li class="nav-item">
+                            <a class="nav-link" href="{{ route('feedback') }}">{{ __('Contact Us') }}</a>
+                        </li>
+                        @endif
                     </ul>
                 </div>
             </div>
