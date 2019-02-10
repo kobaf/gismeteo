@@ -19,7 +19,7 @@
                         </div>
                     </div>
                     <br><br>
-                    @endforeach
+                @endforeach
             </div>
         </div>
     </div>

@@ -89,6 +89,9 @@
       <path value="$PROJECT_DIR$/vendor/phpspec/prophecy" />
       <path value="$PROJECT_DIR$/vendor/hamcrest/hamcrest-php" />
       <path value="$PROJECT_DIR$/vendor/fzaninotto/faker" />
+      <path value="$PROJECT_DIR$/vendor/laracasts/generators" />
+      <path value="$PROJECT_DIR$/vendor/electrolinux/phpquery" />
+      <path value="$PROJECT_DIR$/vendor/curl/curl" />
     </include_path>
   </component>
   <component name="PhpProjectSharedConfiguration" php_language_level="7.1" />

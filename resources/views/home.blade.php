@@ -14,7 +14,7 @@
                         </div>
                     @endif
 
-                    Placeholder for weather...
+                    {{  var_dump($weather) }}
                 </div>
             </div>
         </div>
