@@ -15,7 +15,7 @@
                             </div>
                         @endif
 
-                        <h1>Your feedback has been saved.</h1>
+                        <h3>Your feedback has been saved.</h3>
                         You'll be redirected to home page now...
                     </div>
                 </div>
