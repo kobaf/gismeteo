@@ -16,10 +16,9 @@ class WeatherController extends Controller
 
     public function home()
     {
-        $zap = new Weather($this->src);
+        $weather = (new Weather($this->src))->getCurrent();
 
-        $weather = $zap->getCurrent();
-
-        return view('home', compact('weather'));
+        return view('weather', compact('weather'));
     }
 }
+

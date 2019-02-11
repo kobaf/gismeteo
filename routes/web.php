@@ -12,13 +12,10 @@
 |
 */
 
-use Illuminate\Auth\Middleware\Authenticate;
 
 Auth::routes();
 
-Route::get('/', 'WeatherController@home')->name('home');
-
-Route::get('/home', 'WeatherController@home')->name('home');
+Route::get('/', 'WeatherController@home')->name('weather');
 
 Route::get('/list', 'FeedbackController@list')->middleware('auth')->name('list');
 

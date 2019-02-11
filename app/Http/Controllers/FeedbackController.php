@@ -19,7 +19,7 @@ class FeedbackController extends Controller
     public function writeNew()
     {
 
-        //TODO: Maybe replace this with if-then-else?
+
         $usr = Auth::check() ? [
             'name' => Auth::User()->name . ' ' . Auth::User()->surname,
             'email' => Auth::User()->email
