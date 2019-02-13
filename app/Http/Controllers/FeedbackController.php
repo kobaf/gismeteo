@@ -2,10 +2,10 @@
 
 namespace App\Http\Controllers;
 
-use Illuminate\Support\Facades\Validator;
+use App\Http\Requests\FeedbackPost;
 use Illuminate\Support\Facades\Auth;
-use Illuminate\Http\Request;
 use App\Feedback;
+
 
 class FeedbackController extends Controller
 {
@@ -19,7 +19,6 @@ class FeedbackController extends Controller
     public function writeNew()
     {
 
-
         $usr = Auth::check() ? [
             'name' => Auth::User()->name . ' ' . Auth::User()->surname,
             'email' => Auth::User()->email
@@ -31,32 +30,10 @@ class FeedbackController extends Controller
         return view('feedbacks.newfb', $usr);
     }
 
-    protected function validator(array $data)
+    protected function publish(FeedbackPost $request)
     {
-        return Validator::make($data, [
-            'name' => ['required', 'string', 'max:30'],
-            'email' => ['required', 'string', 'email', 'max:50'],
-            'feedback' => ['required', 'text']
-        ]);
-    }
+        $data = $request->validated();
 
-
-    protected function create(array $data)
-    {
-        return Feedback::create([
-            'name' => $data['name'],
-            'email' => $data['email'],
-            'feedback' => $data['feedback']
-        ]);
-    }
-
-    protected function publish(Request $request)
-    {
-        $data = $request->validate([
-            'name' => 'required|max:30',
-            'email' => 'required|email|max:50',
-            'feedback' => 'required'
-        ]);
         tap(new Feedback($data))->save();
 
         return redirect('/sent');
