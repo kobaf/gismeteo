@@ -2,11 +2,9 @@
 
 namespace App;
 
-require_once "Helpers/phpQuery.php";
-
 use Illuminate\Database\Eloquent\Model;
 use Mockery\Exception;
-use \phpQuery;
+use phpQuery;
 
 
 class Weather extends Model
